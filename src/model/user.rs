@@ -636,6 +636,9 @@ pub struct User {
     /// change if the username+discriminator pair becomes non-unique.
     #[serde(rename = "username")]
     pub name: String,
+    /// The account's display name, if it is set.
+    /// For bots this is the application name.
+    pub global_name: Option<String>,
     /// The public flags on a user's account
     pub public_flags: Option<UserPublicFlags>,
     /// Optional banner hash.
@@ -721,6 +724,7 @@ impl Default for User {
             banner: None,
             accent_colour: None,
             member: None,
+            global_name: None,
         }
     }
 }
@@ -1194,6 +1198,7 @@ impl From<CurrentUser> for User {
             banner: user.banner,
             accent_colour: user.accent_colour,
             member: None,
+            global_name: None,
         }
     }
 }
@@ -1210,6 +1215,7 @@ impl<'a> From<&'a CurrentUser> for User {
             banner: user.banner.clone(),
             accent_colour: user.accent_colour,
             member: None,
+            global_name: None,
         }
     }
 }

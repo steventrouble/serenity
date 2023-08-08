@@ -458,6 +458,7 @@ impl PresenceUser {
             banner: None,
             accent_colour: None,
             member: None,
+            global_name: None,
         })
     }
 
@@ -478,6 +479,7 @@ impl PresenceUser {
             banner: None,
             accent_colour: None,
             member: None,
+            global_name: None,
         })
     }
 

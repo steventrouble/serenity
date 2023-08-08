@@ -252,6 +252,7 @@ fn dummy_message() -> Message {
             banner: None,
             accent_colour: None,
             member: None,
+            global_name: None,
         },
         channel_id: ChannelId::default(),
         content: String::new(),
